@@ -3,3 +3,6 @@ venv/
 
 #myDocs
 0.myDocs/
+
+# Cache
+**/__pycache__/
