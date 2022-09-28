@@ -1,2 +1,5 @@
 #Environments
-**/venv/
+venv/
+
+#myDocs
+0.myDocs/
