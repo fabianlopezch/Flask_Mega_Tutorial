@@ -2,6 +2,7 @@
 
 from flask import render_template
 from app import app 
+from app.forms import LoginForm
 
 # The @app.route decorator creates an association between the URL given as an argument and the view function (in this case index()).
 # View functions are handlers for the application routes.
@@ -20,3 +21,9 @@ def index():
 			}
 	]
 	return render_template('index.html', title='Home', user=user, posts=posts)
+
+@app.route('/login')
+def login():
+	form = LoginForm()
+	return render_template('login.html', title='Sign In', form=form)
+
