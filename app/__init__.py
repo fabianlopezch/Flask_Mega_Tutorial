@@ -3,6 +3,7 @@ from flask import Flask
 from config import Config	# Import the Config class
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
 
 app = Flask(__name__)	# Define the variable app inside the app package
 app.config.from_object(Config)	# Apply the configurations
@@ -11,3 +12,5 @@ migrate = Migrate(app, db)	# Create a database migration engine instance
 
 from app import routes, models	# We import the routes module (from app package) at this point because it requires the app variable to be imported
 								# Import the module 'models' in which the structure of the database is defined
+
+login = LoginManager(app) #	Initializing Flask-Login
