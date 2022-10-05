@@ -6,11 +6,13 @@ from app.forms import LoginForm
 from flask_login import current_user, login_user
 from app.models import User 
 from flask_login import logout_user
+from flask_login import login_required
 
 # The @app.route decorator creates an association between the URL given as an argument and the view function (in this case index()).
 # View functions are handlers for the application routes.
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
 	user = {'username' : 'Carlos'}
 	posts = [
@@ -45,4 +47,3 @@ def login():
 def logout():
 	logout_user()
 	return redirect(url_for('index'))
-	
