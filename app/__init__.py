@@ -10,6 +10,7 @@ app.config.from_object(Config)	# Apply the configurations
 db = SQLAlchemy(app)	# Create a database instance
 migrate = Migrate(app, db)	# Create a database migration engine instance
 login = LoginManager(app) #	Initializing Flask-Login
+login.login_view = 'login'
 
 from app import routes, models	# We import the routes module (from app package) at this point because it requires the app variable to be imported
 								# Import the module 'models' in which the structure of the database is defined
